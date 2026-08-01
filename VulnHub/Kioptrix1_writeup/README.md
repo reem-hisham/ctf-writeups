@@ -31,8 +31,9 @@ netdiscover -r 192.168.58.1/24
 
 ### Findings
 
-- Target IP: `192.168.58.131`
+![alt text](Screenshot_2026-07-27_07_53_10-1.png)
 
+Target IP : `192.168.58.131`
 ### Conclusion
 
 The target machine was successfully identified, allowing further enumeration.
@@ -53,14 +54,7 @@ nmap -sV 192.168.58.131
 
 ### Findings
 
-| Port | Service | Version |
-|------|---------|---------|
-| 22 | SSH | OpenSSH 2.9p2 |
-| 80 | HTTP | Apache 1.3.20 (mod_ssl/2.8.4 OpenSSL/0.9.6b) |
-| 111 | rpcbind | RPC #100000 |
-| 139 | Samba | Samba smbd |
-| 443 | HTTPS | Apache 1.3.20 (mod_ssl/2.8.4 OpenSSL/0.9.6b) |
-| 1024 | status | RPC #100024 |
+![alt text](image.png)
 
 ### Conclusion
 
@@ -98,9 +92,7 @@ http://192.168.58.131
 
 ### Findings
 
-- Default Apache test page.
-- References Red Hat Linux.
-- No application-specific functionality.
+![alt text](Screenshot_2026-07-27_09_42_28.png)
 
 ### Conclusion
 
@@ -122,15 +114,7 @@ gobuster dir -u http://192.168.58.131 -w /usr/share/wordlists/dirb/common.txt
 
 ### Findings
 
-| Path | Result |
-|------|--------|
-| /index.html | Default Apache page |
-| /.htaccess | 403 Forbidden |
-| /.htpasswd | 403 Forbidden |
-| /cgi-bin | 403 Forbidden |
-| /manual | Apache documentation |
-| /mrtg | Redirect |
-| /usage | Redirect |
+![alt text](Screenshot_2026-07-27_09_55_57.png)
 
 ### Conclusion
 
@@ -217,6 +201,8 @@ Gain remote code execution on the target.
 
 After researching available exploit implementations, I selected one compatible with the identified Apache/mod_ssl version.
 
+![alt text](Screenshot_2026-07-27_18_25_56.png)
+
 ### Result
 
 A remote shell was successfully obtained with the privileges of the Apache service account.
@@ -260,7 +246,7 @@ whoami
 ```
 
 ```
-root
+![alt text](Screenshot_2026-07-27_19_00_05.png)
 ```
 
 ### Conclusion
