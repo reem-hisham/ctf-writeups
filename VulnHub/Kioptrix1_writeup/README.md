@@ -245,9 +245,9 @@ uid=0(root) gid=0(root)
 whoami
 ```
 
-```
+
 ![alt text](Screenshot_2026-07-27_19_00_05.png)
-```
+
 
 ### Conclusion
 
