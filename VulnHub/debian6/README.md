@@ -1,8 +1,8 @@
-# Ubuntu 6 - SQL Injection Writeup
+# Debian 6 - SQL Injection Writeup
 
 ## Target
 
-- **Machine:** Ubuntu 6
+- **Machine:** Debian 6
 - **Target IP:** `192.168.58.133`
 - **Main Vulnerability:** SQL Injection
 - **Database:** MySQL
