@@ -159,6 +159,15 @@ www-data
 
 I now had **initial access**, but I was still a low-privileged user.
 
+The initial shell was limited, so I upgraded it to a more usable interactive Bash shell using Python's PTY functionality:
+
+```bash
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+With a more functional shell, I continued enumerating the Drupal installation and investigating its configuration files.
+
+
 ### Screenshot — Metasploit Exploitation
 
 ![alt text](Screenshot_2026-09-07_18_55_17.png)
